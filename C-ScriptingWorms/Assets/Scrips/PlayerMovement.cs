@@ -31,19 +31,14 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Jump()
     {
-        //characterBody.velocity = Vector3.up * 10f;
+        
         characterBody.AddForce(Vector3.up * 200f);
     }
 
     private bool IsTouchingFloor()
     {
         RaycastHit hit;
-        // Parameters:
-        // - The center from where we shoot
-        // - Radius of the sphere
-        // - Direction of the sphere
-        // - hit parameter
-        // - Distance the sphere
+        
         bool result = Physics.SphereCast(transform.position, 0.15f, -transform.up, out hit, 1f);
         return result;
     }
