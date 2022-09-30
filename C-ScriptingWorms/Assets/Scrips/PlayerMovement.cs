@@ -10,18 +10,14 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
-
-        Vector3 movementDirection = new Vector3(horizontalInput, 0, verticalInput);
-        movementDirection.Normalize();
-
-        transform.Translate(movementDirection * speed * Time.deltaTime, Space.World);
-
-        if (movementDirection != Vector3.zero)
+        if (Input.GetAxis("Horizontal") != 0)
         {
-            Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+            transform.Rotate(transform.up * rotationSpeed * Time.deltaTime * Input.GetAxis("Horizontal"));
+        }
+
+        if (Input.GetAxis("Vertical") != 0)
+        {
+            transform.Translate(transform.forward * speed * Time.deltaTime * Input.GetAxis("Vertical"), Space.World);
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && IsTouchingFloor())
