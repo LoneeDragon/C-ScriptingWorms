@@ -9,6 +9,7 @@ public class PlayerWeapon : MonoBehaviour
 
     private void Update()
     {
+        
         if (Input.GetKeyDown(KeyCode.V))
         {
             GameObject newProjectile = Instantiate(projectilePrefab);

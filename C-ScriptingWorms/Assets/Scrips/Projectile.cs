@@ -5,18 +5,22 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     [SerializeField] private float speed;
+    [SerializeField] private Rigidbody projectileBody;
     private bool isActive;
 
     public void Initialize()
     {
         isActive = true;
+        
+        projectileBody.AddForce(transform.forward * 700f + transform.up * 300f);
+
     }
 
     void Update()
     {
         if (isActive)
         {
-            transform.Translate(transform.forward * speed * Time.deltaTime);
+            //transform.Translate(transform.forward * speed * Time.deltaTime);
         }
     }
 
