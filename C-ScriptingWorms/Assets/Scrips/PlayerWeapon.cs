@@ -9,12 +9,12 @@ public class PlayerWeapon : MonoBehaviour
 
     private void Update()
     {
-        
+        Vector3 force = transform.forward * 700f + transform.up * 300f;
         if (Input.GetKeyDown(KeyCode.V))
         {
             GameObject newProjectile = Instantiate(projectilePrefab);
             newProjectile.transform.position = shootingStartPosition.position;
-            newProjectile.GetComponent<Projectile>().Initialize();
+            newProjectile.GetComponent<Projectile>().Initialize(force);
         }
 
 

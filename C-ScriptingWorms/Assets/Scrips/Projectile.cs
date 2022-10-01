@@ -8,11 +8,11 @@ public class Projectile : MonoBehaviour
     [SerializeField] private Rigidbody projectileBody;
     private bool isActive;
 
-    public void Initialize()
+    public void Initialize(Vector3 direction)
     {
         isActive = true;
         
-        projectileBody.AddForce(transform.forward * 700f + transform.up * 300f);
+        projectileBody.AddForce(direction);
 
     }
 
