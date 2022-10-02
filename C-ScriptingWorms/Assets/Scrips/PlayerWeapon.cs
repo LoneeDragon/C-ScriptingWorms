@@ -7,6 +7,9 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] private PlayerTurn playerTurn;
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform shootingStartPosition;
+    [SerializeField] private float weaponDamage;
+   
+    
     
 
     private void Update()
@@ -22,8 +25,18 @@ public class PlayerWeapon : MonoBehaviour
                 newProjectile.transform.position = shootingStartPosition.position;
                 newProjectile.GetComponent<Projectile>().Initialize(force);
             }
-
         }
+    }
 
+    public void bang()
+    {
+        if(thereWasHit)
+        {
+            PlayerHealth playerHealth = result.collider.GetComponent<PlayerHealth>();
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(weaponDamage);
+            }
+        }
     }
 }

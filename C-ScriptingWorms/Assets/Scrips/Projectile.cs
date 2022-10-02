@@ -6,6 +6,8 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private Rigidbody projectileBody;
+    [SerializeField] private float weaponDamage;
+    
     private bool isActive;
 
     public void Initialize(Vector3 direction)
@@ -30,6 +32,10 @@ public class Projectile : MonoBehaviour
         Destroy(gameObject);
 
     }
+
+    
+    
+
 
 
 }
