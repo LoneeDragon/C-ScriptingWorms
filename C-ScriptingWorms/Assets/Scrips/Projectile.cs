@@ -28,14 +28,12 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-
+//PlayerHealth playerHealth = result.collider.GetComponent<PlayerHealth>();
+       //(playerHealth != null)
+       {
+       //    playerHealth.TakenDamage(weaponDamage);
+       }
         Destroy(gameObject);
-
     }
-
-    
-    
-
-
 
 }

@@ -12,14 +12,15 @@ public class PlayerHealth : MonoBehaviour
 	  currentHealth = maxHealth;
   }
 
-  public void TakeDamage(float damage)
+  public void TakenDamage(float damage)
   {
 	  currentHealth -= damage;
 
 	  if (currentHealth <= 0)
 	  {
-		  //hmmm
+		  gameObject.SetActive(false);
 	  }
+	  
   }
 
 

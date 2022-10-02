@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class PlayerWeapon : MonoBehaviour
 {
+    
     [SerializeField] private PlayerTurn playerTurn;
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform shootingStartPosition;
-    [SerializeField] private float weaponDamage;
+    
    
     
     
@@ -24,18 +25,7 @@ public class PlayerWeapon : MonoBehaviour
                 GameObject newProjectile = Instantiate(projectilePrefab);
                 newProjectile.transform.position = shootingStartPosition.position;
                 newProjectile.GetComponent<Projectile>().Initialize(force);
-            }
-        }
-    }
-
-    public void bang()
-    {
-        if(thereWasHit)
-        {
-            PlayerHealth playerHealth = result.collider.GetComponent<PlayerHealth>();
-            if (playerHealth != null)
-            {
-                playerHealth.TakeDamage(weaponDamage);
+                
             }
         }
     }
