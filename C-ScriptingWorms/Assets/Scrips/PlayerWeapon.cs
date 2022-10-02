@@ -4,19 +4,26 @@ using UnityEngine;
 
 public class PlayerWeapon : MonoBehaviour
 {
+    [SerializeField] private PlayerTurn playerTurn;
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform shootingStartPosition;
+    
 
     private void Update()
     {
-        Vector3 force = transform.forward * 700f + transform.up * 300f;
-        if (Input.GetKeyDown(KeyCode.V))
+        bool IsPlayerTurn = playerTurn.IsPlayerTurn();
+        if (IsPlayerTurn)
         {
-            GameObject newProjectile = Instantiate(projectilePrefab);
-            newProjectile.transform.position = shootingStartPosition.position;
-            newProjectile.GetComponent<Projectile>().Initialize(force);
-        }
+            Vector3 force = transform.forward * 700f + transform.up * 300f;
+            if (Input.GetKeyDown(KeyCode.V))
+            {
+                TurnManager.GetInstance().TriggerChangeTurn();
+                GameObject newProjectile = Instantiate(projectilePrefab);
+                newProjectile.transform.position = shootingStartPosition.position;
+                newProjectile.GetComponent<Projectile>().Initialize(force);
+            }
 
+        }
 
     }
 }

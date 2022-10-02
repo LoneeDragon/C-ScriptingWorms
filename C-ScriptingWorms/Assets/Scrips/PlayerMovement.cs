@@ -5,13 +5,15 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private Rigidbody characterBody;
-    public int playerIndex;
+    [SerializeField] private PlayerTurn playerTurn;
     public float speed;
     public float rotationSpeed;
 
     void Update()
     {
-        if (Input.GetAxis("Horizontal") != 0)
+        if (playerTurn.IsPlayerTurn())
+        {
+            if (Input.GetAxis("Horizontal") != 0)
         {
             transform.Rotate(transform.up * rotationSpeed * Time.deltaTime * Input.GetAxis("Horizontal"));
         }
@@ -24,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && IsTouchingFloor())
         {
             Jump();
+        }
         }
     }
     private void Jump()
