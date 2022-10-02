@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private PlayerTurn playerTurn;
     public float speed;
     public float rotationSpeed;
+    
 
     void Update()
     {
@@ -42,4 +43,7 @@ public class PlayerMovement : MonoBehaviour
         bool result = Physics.SphereCast(transform.position, 0.15f, -transform.up, out hit, 1f);
         return result;
     }
+
+
+
 }
