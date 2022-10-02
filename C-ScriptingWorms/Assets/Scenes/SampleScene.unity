@@ -700,8 +700,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.084754705, y: 0.000000017672123, z: -0.0000000015032042, w: 0.99640185}
-  m_LocalPosition: {x: -5.89, y: -6.1000004, z: -23.702707}
+  m_LocalRotation: {x: 0.084754765, y: -0.000000016625181, z: 0.0000000014141514, w: 0.99640185}
+  m_LocalPosition: {x: -5.89, y: -4.4, z: -23.702707}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -752,6 +752,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1067833541}
   - component: {fileID: 1067833540}
+  - component: {fileID: 1067833542}
   m_Layer: 0
   m_Name: CM vcam1
   m_TagString: Untagged
@@ -777,8 +778,8 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 681442145}
-  m_Follow: {fileID: 681442145}
+  m_LookAt: {fileID: 0}
+  m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 5
@@ -804,8 +805,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1067833539}
-  m_LocalRotation: {x: 0.084754705, y: 0.000000017672123, z: -0.0000000015032042, w: 0.99640185}
-  m_LocalPosition: {x: -5.89, y: -6.1000004, z: -23.702707}
+  m_LocalRotation: {x: 0.084754765, y: -0.000000016625181, z: 0.0000000014141514, w: 0.99640185}
+  m_LocalPosition: {x: -5.89, y: -4.4, z: -23.702707}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -813,6 +814,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1067833542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067833539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32f675dfb42ffac48824db78c4bf37b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceFromThePlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1329362831
 GameObject:
   m_ObjectHideFlags: 0
