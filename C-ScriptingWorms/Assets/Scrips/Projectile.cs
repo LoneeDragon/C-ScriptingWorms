@@ -7,6 +7,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private Rigidbody projectileBody;
     [SerializeField] private float weaponDamage;
+    [SerializeField] private float damage= 20f;
     
     private bool isActive;
 
@@ -25,15 +26,27 @@ public class Projectile : MonoBehaviour
             //transform.Translate(transform.forward * speed * Time.deltaTime);
         }
     }
+    
 
-    private void OnCollisionEnter(Collision collision)
+    
+
+    private void OnCollisionEnter(Collision other)
     {
-//PlayerHealth playerHealth = result.collider.GetComponent<PlayerHealth>();
-       //(playerHealth != null)
-       {
-       //    playerHealth.TakenDamage(weaponDamage);
-       }
-        Destroy(gameObject);
+        if (other.gameObject.tag == "Player")
+        {
+            PlayerHealth PlayerH=other.transform.GetComponent<PlayerHealth>();
+
+            if(PlayerH == null)
+            {
+                Debug.Log("PlayerHealth SCRIPT IS MISSING FROM THE PLAYER");
+
+                return;
+            }
+
+            PlayerH.TakeDamage(damage);
+            Destroy(gameObject);
+
+        }
     }
 
 }

@@ -4,24 +4,15 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-  [SerializeField] private float maxHealth;
-  private float currentHealth;
+	[SerializeField] float healthPoints = 100f;
 
-  void Start()
-  {
-	  currentHealth = maxHealth;
-  }
+	public void TakeDamage(float damage)
+	{
+		healthPoints-=damage;
 
-  public void TakenDamage(float damage)
-  {
-	  currentHealth -= damage;
-
-	  if (currentHealth <= 0)
-	  {
-		  gameObject.SetActive(false);
-	  }
-	  
-  }
-
-
+		if (healthPoints<=0)
+		{
+			gameObject.SetActive(false);
+		}
+	}
 }

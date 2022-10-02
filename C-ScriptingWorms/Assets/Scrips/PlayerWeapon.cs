@@ -18,7 +18,7 @@ public class PlayerWeapon : MonoBehaviour
         bool IsPlayerTurn = playerTurn.IsPlayerTurn();
         if (IsPlayerTurn)
         {
-            Vector3 force = transform.forward * 700f + transform.up * 300f;
+            Vector3 force = transform.forward * 700f + transform.up * 100f;
             if (Input.GetKeyDown(KeyCode.V))
             {
                 TurnManager.GetInstance().TriggerChangeTurn();
