@@ -9,7 +9,7 @@ public class TurnManager : MonoBehaviour
     [SerializeField] private PlayerTurn playerTwo;
     [SerializeField] private float timeBetweenTurns;
     
-    private int currentPlayerIndex;
+    public int currentPlayerIndex;
     private bool waitingForNextTurn;
     private float turnDelay;
 
